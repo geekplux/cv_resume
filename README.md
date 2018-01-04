@@ -10,6 +10,12 @@
 
 *\*我自己是用 emacs 在 MacOS 上编译的，其他途径还没试过*
 
+安装xelatex(可通过安装[MacTeX](http://www.tug.org/mactex/)将需要的包全部安装)。然后运行
+
+```bash
+make
+```
+
 ## Preview
 
 ![](./template_cn_blue.png)
