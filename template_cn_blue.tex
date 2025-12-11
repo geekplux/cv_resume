@@ -13,12 +13,27 @@
 \usepackage[slantfont,boldfont]{xeCJK}
 \usepackage{xcolor}  % replace by the encoding you are using
 
+\usepackage{ifplatform} % 判断平台
+
 
 % \setmainfont{Tahoma}
 \setmainfont{Times New Roman}  % 缺省英文字体.serif是有衬线字体sans serif无衬线字体
-\setCJKmainfont[ItalicFont={Kai}, BoldFont={Hei}]{STSong}  % 衬线字体 缺省中文字体为
-\setCJKsansfont{STSong}
-\setCJKmonofont{STFangsong}  % 中文等宽字体
+
+\ifwindows
+  % Windows 下使用的代码
+  \setCJKmainfont[ItalicFont=KaiTi, BoldFont=SimHei]{SimSun}  % 衬线字体 缺省中文字体为
+  \setCJKsansfont{SimSun}
+  \setmonofont{FangSong}                 % 等宽字体: FangSong, Consolas
+\fi
+
+\ifmacosx
+  % macOS 下使用的代码
+  \setCJKmainfont[ItalicFont={Kai}, BoldFont={Hei}]{STSong}  % 衬线字体 缺省中文字体为
+  \setCJKsansfont{STSong}
+  \setCJKmonofont{STFangsong}  % 中文等宽字体
+\fi
+
+
 %-----------------------xeCJK下设置中文字体------------------------------%
 \setCJKfamilyfont{song}{SimSun}  % 宋体 song
 \newcommand{\song}{\CJKfamily{song}}
